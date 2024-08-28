@@ -8,6 +8,8 @@ import messageRouter from "./router/messageRouter.js";
 import {errorMiddleware} from "./middleware/errorMiddleware.js"
 import userRouter from "./router/userRouter.js";
 import appointmentRouter from "./router/appointmentRouter.js";
+import productRouter from "./router/productRouter.js";
+import cartRouter from "./router/cartRouter.js";
 
 const app = express();
 
@@ -32,6 +34,8 @@ app.use(fileUpload({
 app.use("/api/v1/message",messageRouter);
 app.use("/api/v1/user",userRouter);
 app.use("/api/v1/appointment",appointmentRouter);
+app.use("/api/v1/product",productRouter);
+app.use("/api/v1/cart",cartRouter);
 
 dbConnection();
 
